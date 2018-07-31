@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jeux</title>
+</head>
+ <body>
+
+	<img id="target" src="chat.jpg">
+<style>
+body{
+
+  background-color: pink;
+
+}
+  #target{
+
+
+width: 100px;
+height: 100px;
+box-shadow: 0px 2px 4px 5px;
+
+  }
+</style>
+
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script>
+
+    $(function(){
+
+      //DIMENSIONS DE LA FENETRES 
+
+      var largeur = ($(window).width()) - 50;
+      var hauteur = ($(window).height ()) - 50;
+
+      // Affichages de la premiéres image en (100, 100)
+
+      var p = $ ('#target').offset();
+
+
+         p.top=100;
+         p.left=100;
+
+         $('#target').offset(p);
+
+         // Gestion du click déplacemant de l'image 
+
+$("#target").mouseenter(function() {
+
+          x = Math.floor(Math.random()*largeur);
+          Y = Math.floor(Math.random()*hauteur);
+
+          var p = $('#target').offset();
+
+
+          p.top = Y;
+          p.left = x;
+
+          $('#target').offset(p);
+
+         });
+    });
+  </script>
+ </body>
+</html>
