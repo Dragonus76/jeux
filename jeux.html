@@ -5,6 +5,13 @@
 </head>
  <body>
 
+  <header>
+    <h1>
+
+      Attrape le chat 
+    </h1>
+  </header>
+
 	<img id="target" src="chat.jpg">
 <style>
 body{
@@ -13,11 +20,11 @@ body{
 
 }
   #target{
+""
 
-
-width: 100px;
-height: 100px;
-box-shadow: 0px 2px 4px 5px;
+width: 150px;
+height: 150px;
+box-shadow: 5px 5px 5px 5px;
 
   }
 </style>
@@ -51,6 +58,7 @@ $("#target").mouseenter(function() {
 
           x = Math.floor(Math.random()*largeur);
           Y = Math.floor(Math.random()*hauteur);
+        
 
           var p = $('#target').offset();
 
@@ -60,8 +68,24 @@ $("#target").mouseenter(function() {
 
           $('#target').offset(p);
 
+$(document).ready(function () {
+    var obj = document.createElement("audio");
+    obj.src = "chat.mp3";
+    obj.volume = 1;
+    obj.autoPlay = false;
+    obj.preLoad = true;
+
+    $("#target").click(function () {
+        obj.play();
+    });
+});
+    
+      
          });
     });
+
+
+
   </script>
  </body>
 </html>
